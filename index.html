@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Manrope:wght@200..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('art/fond.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4a4a4a;
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-container {
+            position: relative;
+            background-color: #d9e9cf;
+            padding: 40px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 60%;
+            margin: 20px auto 40px;
+            text-align: center;
+        }
+        .profile-photo {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid #96a67d;
+        }
+        .profile-name {
+            font-family: "Fjalla One", serif;
+            font-size: 42px;
+            font-weight: bold;
+            color: #96a67d;
+            margin-bottom: 10px;
+            text-align: right; 
+        }
+        .section-name {
+            font-family: "Fjalla One", serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #cb4335;
+            margin-bottom: 10px;
+            padding-top: 40px;
+            padding-left: 100px;
+            text-align: left; 
+        }
+       .profile-bio {
+            background-color: #cb4335;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            margin-left: auto;      /* Pousse le conteneur à droite */
+            margin-right: 0;        /* Retire la marge à droite */
+            text-align: right;      /* Aligne le texte à droite */
+            position: relative;     /* Nécessaire pour positionner les icônes */
+        }   
+        .social-links {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            bottom: -60px;
+            right: 15px;
+        }
+
+        .social-links img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            max-width: 90%;
+            margin: auto;
+        }
+        .gallery-item {
+            position: relative;
+            background-color: #d9e9cf;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .title {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #2e6442;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+    <img src="art/pp.jpg" alt="Votre photo" class="profile-photo">
+    <div class="profile-name">Kanhoe</div>
+    <div class="profile-bio">
+        Bonjour ! Je suis Kanhoe, passionnée d'art sous toutes ses formes depuis toute petite. Je me spécialise dans l'illustration numérique, mais j'aime aussi écrire (réalisation d'un novel et d'un webtoon en cours), coder, coudre et designer des vêtements, crocheter, peindre sur toile, produire de la musique, etc.
+        Bienvenue sur mon portfolio !
+        <div class="social-links">
+            <a href="https://www.instagram.com/kanh0e" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/120px-Instagram_icon.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@kanh0e" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/640px-Tiktok_icon.svg.png" alt="TikTok"></a>
+            <a href="https://www.etsy.com/shop/kanhoe" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Etsy_-_SuperTinyIcons.svg/640px-Etsy_-_SuperTinyIcons.svg.png" alt="TikTok"></a>
+        </div>
+    </div>
+</div>
+
+<!-- COMMS -->
+
+<div class="section-name">Commissions</div>
+    <div class="gallery">
+        <div class="gallery-item" onclick="openModal('art/comms/14.jpg')">
+            <img src="art/comms/14.jpg" alt="Art 1">
+            <div class="title">Miky</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/15.jpg')">
+            <img src="art/comms/15.jpg" alt="Art 1">
+            <div class="title">Miky Avatar</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/16.jpg')">
+            <img src="art/comms/16.jpg" alt="Art 1">
+            <div class="title">Nixie</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/17.jpg')">
+            <img src="art/comms/17.jpg" alt="Art 1">
+            <div class="title">Nixie Avatar</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/18.jpg')">
+            <img src="art/comms/18.jpg" alt="Art 1">
+            <div class="title">Ryusavatt</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/19.jpg')">
+            <img src="art/comms/19.jpg" alt="Art 1">
+            <div class="title">Ryusavatt Avatar</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/20.jpg')">
+            <img src="art/comms/20.jpg" alt="Art 1">
+            <div class="title">Miky Sugar Promo Poster</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/1.jpg')">
+            <img src="art/comms/1.jpg" alt="Art 1">
+            <div class="title">Zun, le Visuel de tâches de rousseurs noires</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/2.jpg')">
+            <img src="art/comms/2,1.jpg" alt="Art 1">
+            <div class="title">6 Crocs</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/3.jpg')">
+            <img src="art/comms/3.jpg" alt="Art 1">
+            <div class="title">Helaine</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/4.jpg')">
+            <img src="art/comms/4.jpg" alt="Art 1">
+            <div class="title">Jaeeun</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/5.jpg')">
+            <img src="art/comms/5.jpg" alt="Art 1">
+            <div class="title">Monhee</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/6.jpg')">
+            <img src="art/comms/6.jpg" alt="Art 1">
+            <div class="title">Chaeyoung</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/7.jpg')">
+            <img src="art/comms/7.jpg" alt="Art 1">
+            <div class="title">Blanche</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/8.jpg')">
+            <img src="art/comms/8.jpg" alt="Art 1">
+            <div class="title">Rena</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/9.jpg')">
+            <img src="art/comms/9.jpg" alt="Art 1">
+            <div class="title">Kohana</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/10.jpg')">
+            <img src="art/comms/10,1.jpg" alt="Art 1">
+            <div class="title">Kaki bust artwork</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/11.jpg')">
+            <img src="art/comms/11,1.jpg" alt="Art 1">
+            <div class="title">Kaki full body artwork</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/12.jpg')">
+            <img src="art/comms/12.jpg" alt="Art 1">
+            <div class="title">Vegas</div>
+        </div>
+        <div class="gallery-item" onclick="openModal('art/comms/13.jpg')">
+            <img src="art/comms/13,1.jpg" alt="Art 1">
+            <div class="title">IMVU Character</div>
+        </div>
+    </div>
+
+    <!-- CHARA -->
+
+    <div class="section-name">Character Design</div>
+<div class="gallery">
+    <div class="gallery-item" onclick="openModal('art/charadesign/24.jpg')">
+        <img src="art/charadesign/24.jpg" alt="Art 23">
+        <div class="title">Flower Chara Design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/25.jpg')">
+        <img src="art/charadesign/25,1.jpg" alt="Art 23">
+        <div class="title">Arcane Fireflies Self Insert</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/26.jpg')">
+        <img src="art/charadesign/26.jpg" alt="Art 23">
+        <div class="title">Character Design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/27.jpg')">
+        <img src="art/charadesign/27.jpg" alt="Art 23">
+        <div class="title">Women</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/28.jpg')">
+        <img src="art/charadesign/28.jpg" alt="Art 23">
+        <div class="title">Fashion design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/29.jpg')">
+        <img src="art/charadesign/29.jpg" alt="Art 23">
+        <div class="title">Character Design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/30.jpg')">
+        <img src="art/charadesign/30,1.jpg" alt="Art 23">
+        <div class="title">Sunoo Splash Art</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/31.jpg')">
+        <img src="art/charadesign/31,1.jpg" alt="Art 23">
+        <div class="title">Jungwon Splash Art</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/1.jpg')">
+        <img src="art/charadesign/1.jpg" alt="Art 1">
+        <div class="title">Arcane Self Insert</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/2.jpg')">
+        <img src="art/charadesign/2.jpg" alt="Art 2">
+        <div class="title">Kano (OC) x Saph (Friend's OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/3.jpg')">
+        <img src="art/charadesign/3,1.jpg" alt="Art 3">
+        <div class="title">Kano (OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/4.jpg')">
+        <img src="art/charadesign/4.jpg" alt="Art 4">
+        <div class="title">Kano (OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/5.jpg')">
+        <img src="art/charadesign/5,1.jpg" alt="Art 5">
+        <div class="title">Game Design EN- Heeseung</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/6.jpg')">
+        <img src="art/charadesign/6,1.jpg" alt="Art 6">
+        <div class="title">Game Design EN- Jake</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/7.jpg')">
+        <img src="art/charadesign/7,1.jpg" alt="Art 7">
+        <div class="title">Game Design EN- Jay</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/8.jpg')">
+        <img src="art/charadesign/8,1.jpg" alt="Art 8">
+        <div class="title">Game Design EN- Sunoo</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/9.jpg')">
+        <img src="art/charadesign/9.jpg" alt="Art 9">
+        <div class="title">Enhypen Jungwon design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/10.jpg')">
+        <img src="art/charadesign/10.jpg" alt="Art 10">
+        <div class="title">Saph (Friend's OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/11.jpg')">
+        <img src="art/charadesign/11.jpg" alt="Art 11">
+        <div class="title">Avatar design (Friend's OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/12.jpg')">
+        <img src="art/charadesign/12,1.jpg" alt="Art 12">
+        <div class="title">Royalty character design</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/13.jpg')">
+        <img src="art/charadesign/13,1.jpg" alt="Art 13">
+        <div class="title">MLP character design EN- Jay</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/14.jpg')">
+        <img src="art/charadesign/14,1.jpg" alt="Art 14">
+        <div class="title">MLP character design EN- Heeseung</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/15.jpg')">
+        <img src="art/charadesign/15,1.jpg" alt="Art 15">
+        <div class="title">MLP character design EN- Sunoo</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/16.jpg')">
+        <img src="art/charadesign/16,1.jpg" alt="Art 16">
+        <div class="title">MLP character design EN- Jungwon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/17.jpg')">
+        <img src="art/charadesign/17.jpg" alt="Art 17">
+        <div class="title">Cheetah (Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/18.jpg')">
+        <img src="art/charadesign/18,1.jpg" alt="Art 18">
+        <div class="title">Ciel (Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/19.jpg')">
+        <img src="art/charadesign/19.jpg" alt="Art 19">
+        <div class="title">Dru (Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/20.jpg')">
+        <img src="art/charadesign/20.jpg" alt="Art 20">
+        <div class="title">(Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/21.jpg')">
+        <img src="art/charadesign/21.jpg" alt="Art 21">
+        <div class="title">Kara (Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/22.jpg')">
+        <img src="art/charadesign/22.jpg" alt="Art 22">
+        <div class="title">Nephie (Reddit user OC)</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/charadesign/23.jpg')">
+        <img src="art/charadesign/23.jpg" alt="Art 23">
+        <div class="title">Thisna (Reddit user OC)</div>
+    </div>
+</div>
+
+<!-- KPOP -->
+
+    <div class="section-name">Kpop</div>
+<div class="gallery">
+    <div class="gallery-item" onclick="openModal('art/kpop/1.jpg')">
+        <img src="art/kpop/1,1.jpg" alt="Art 1">
+        <div class="title">Brought the heat back Sunoo x Heeseung</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/2.jpg')">
+        <img src="art/kpop/2.jpg" alt="Art 2">
+        <div class="title">ZeroBaseOne Hanbin</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/3.jpg')">
+        <img src="art/kpop/3.jpg" alt="Art 3">
+        <div class="title">ZeroBaseOne Zhanghao</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/4.jpg')">
+        <img src="art/kpop/4.jpg" alt="Art 4">
+        <div class="title">Valentine's day Sunoo</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/5.jpg')">
+        <img src="art/kpop/5.jpg" alt="Art 5">
+        <div class="title">Butterfly Jungwon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/6.jpg')">
+        <img src="art/kpop/6.jpg" alt="Art 6">
+        <div class="title">Winter</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/7.jpg')">
+        <img src="art/kpop/7.jpg" alt="Art 7">
+        <div class="title">BTS Jungkook</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/8.jpg')">
+        <img src="art/kpop/8.jpg" alt="Art 8">
+        <div class="title">BTS Jimin</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/9.jpg')">
+        <img src="art/kpop/9,1.jpg" alt="Art 9">
+        <div class="title">Halloween Spider Jungwon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/10.jpg')">
+        <img src="art/kpop/10,1.jpg" alt="Art 10">
+        <div class="title">Dilemma Sunoo</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/11.jpg')">
+        <img src="art/kpop/11.jpg" alt="Art 11">
+        <div class="title"> Snake Ni-ki</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/12.jpg')">
+        <img src="art/kpop/12,1.jpg" alt="Art 12">
+        <div class="title">Skull Sunghoon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/13.jpg')">
+        <img src="art/kpop/13.jpg" alt="Art 13">
+        <div class="title">(G)I-DLE Soyeon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/14.jpg')">
+        <img src="art/kpop/14,1.jpg" alt="Art 14">
+        <div class="title">Cravity Seongmin</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/15.jpg')">
+        <img src="art/kpop/15.jpg" alt="Art 15">
+        <div class="title">Astronaut Heeseung</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/16.jpg')">
+        <img src="art/kpop/16.jpg" alt="Art 16">
+        <div class="title">Butterfly Jake</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/17.jpg')">
+        <img src="art/kpop/17.jpg" alt="Art 17">
+        <div class="title">Bite me Ni-ki</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/18.jpg')">
+        <img src="art/kpop/18.jpg" alt="Art 18">
+        <div class="title">Tomorrow x Together Yeonjun</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/19.jpg')">
+        <img src="art/kpop/19,1.jpg" alt="Art 19">
+        <div class="title">Tomorrow x Together Soobin</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/20.jpg')">
+        <img src="art/kpop/20.jpg" alt="Art 20">
+        <div class="title">Twice Nayeon</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/21.jpg')">
+        <img src="art/kpop/21,1.jpg" alt="Art 21">
+        <div class="title">Blessed-Cursed Jay</div>
+    </div>
+    <div class="gallery-item" onclick="openModal('art/kpop/22.jpg')">
+        <img src="art/kpop/22,1.jpg" alt="Art 22">
+        <div class="title">Manifesto Ni-ki</div>
+    </div>
+</div>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modal-img">
+    </div>
+    <script>
+        function openModal(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+    <footer style="margin-top: 40px; text-align: center; font-size: 14px; color: #4a4a4a;">
+    © 2025 Kanhoe - Tous droits réservés | Design par Kanhoe
+</footer>
+
+</body>
+</html>
