@@ -253,6 +253,14 @@ body {
     gap: 10px; /* espace entre les éléments */
 }
 
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+}
+
+
 
 
     </style>
@@ -482,13 +490,20 @@ filterButtons.forEach(button => {
     <!-- PAS DE CLICK DROIT -->
 
 <script>
+  // Empêche le clic droit (déjà dans ton code)
   document.addEventListener('contextmenu', event => {
     if (event.target.tagName === 'IMG') {
       event.preventDefault();
     }
   });
-</script>
 
+  // Empêche le glisser-déposer des images
+  document.addEventListener('dragstart', event => {
+    if (event.target.tagName === 'IMG') {
+      event.preventDefault();
+    }
+  });
+</script>
 
 
 
