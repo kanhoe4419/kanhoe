@@ -41,7 +41,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 6px solid #96a67d;
+    border: 10px solid #96a67d;
 }
 
 /* Profile name */
@@ -53,28 +53,20 @@ body {
     margin-bottom: 10px;
     text-align: right;
 }
-.section-name {
-            font-family: "Fjalla One", serif;
-            font-size: 32px;
-            font-weight: bold;
-            color: #cb4335;
-            margin-bottom: 10px;
-            padding-top: 40px;
-            padding-left: 100px;
-            text-align: left; 
-        }
 
 /* Profile bio */
 .profile-bio {
-    background-color: #cb4335;
+    background-color: #AD6876;
     color: white;
     padding: 15px;
     border-radius: 15px;
     max-width: 80%;
     margin-left: auto;
     margin-right: 0;
-    text-align: right;
+    text-align: left;
     position: relative;
+    font-size:18px;
+    line-height: 1.2;
 }
 
 /* Social links */
@@ -96,10 +88,47 @@ body {
     transform: scale(1.1);
 }
 
+
+/* Filtres de galerie */
+.filters {
+    text-align: center;
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filters button {
+    background-color: #96a67d; /* Vert doux principal */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Arrondi */
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.filters button:hover {
+    background-color: #2e6442; /* Vert plus foncé au survol */
+    transform: scale(1.05);
+}
+
+.filters button.active {
+    background-color: #2e6442; /* Actif = vert foncé */
+    color: #fff;
+    transform: scale(1.05);
+}
+
+
+
 /* Gallery */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 15px;
     max-width: 90%;
     margin: auto;
@@ -224,11 +253,13 @@ body {
     gap: 10px; /* espace entre les éléments */
 }
 
+
+
     </style>
 </head>
 <body>
     <div class="profile-container">
-    <img src="https://i.imgur.com/4N5fEs6.jpeg" alt="Votre photo" class="profile-photo">
+    <img src="https://i.imgur.com/UCg42il.jpeg" alt="Votre photo" class="profile-photo">
     <div class="profile-name">Hypenhaze</div>
     <div class="profile-bio">
         Hi, it's Haze ~ Welcome to my portfolio, where you can follow my art journey. I am creating artworks, working on a webtoon and animation projects. <br>
@@ -242,315 +273,169 @@ body {
     </div>
 </div>
 
-<!-- COMMS -->
-
-<div class="section-name">Commissions</div>
-    <div class="gallery">
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/5JAMG3K.jpeg')">
-            <img src="https://i.imgur.com/5JAMG3K.jpeg" alt="Art 1">
-            <div class="title">Miky</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/DSUb8T2.jpeg')">
-            <img src="https://i.imgur.com/DSUb8T2.jpeg" alt="Art 1">
-            <div class="title">Miky Avatar</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/u6ZyaIY.jpeg')">
-            <img src="https://i.imgur.com/u6ZyaIY.jpeg" alt="Art 1">
-            <div class="title">Nixie</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/WXUdUy3.jpeg')">
-            <img src="https://i.imgur.com/WXUdUy3.jpeg" alt="Art 1">
-            <div class="title">Nixie Avatar</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/3qZatG5.jpeg')">
-            <img src=https://i.imgur.com/3qZatG5.jpeg" alt="Art 1">
-            <div class="title">Ryusavatt</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/C9z24mO.jpeg')">
-            <img src="https://i.imgur.com/C9z24mO.jpeg" alt="Art 1">
-            <div class="title">Ryusavatt Avatar</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/PlkEmTp.jpeg')">
-            <img src="https://i.imgur.com/PlkEmTp.jpeg" alt="Art 1">
-            <div class="title">Miky Sugar Promo Poster</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/6WUivli.jpeg')">
-            <img src="https://i.imgur.com/6WUivli.jpeg" alt="Art 1">
-            <div class="title">Zun, le Visuel de tâches de rousseurs noires</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/dRcPBxx.jpeg')">
-            <img src="https://i.imgur.com/pBczUyN.jpeg" alt="Art 1">
-            <div class="title">6 Crocs</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/XW24rsG.jpeg')">
-            <img src="https://i.imgur.com/XW24rsG.jpeg" alt="Art 1">
-            <div class="title">Helaine</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/7VrtJFi.jpeg')">
-            <img src="https://i.imgur.com/7VrtJFi.jpeg" alt="Art 1">
-            <div class="title">Jaeeun</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/WZ1jaEs.jpeg')">
-            <img src="https://i.imgur.com/WZ1jaEs.jpeg" alt="Art 1">
-            <div class="title">Monhee</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/V2yDAAL.jpeg')">
-            <img src="https://i.imgur.com/V2yDAAL.jpeg" alt="Art 1">
-            <div class="title">Chaeyoung</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/BJKltxC.jpeg')">
-            <img src="https://i.imgur.com/BJKltxC.jpeg" alt="Art 1">
-            <div class="title">Blanche</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/fpxdO6E.jpeg')">
-            <img src="https://i.imgur.com/fpxdO6E.jpeg" alt="Art 1">
-            <div class="title">Rena</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/uPE0gPp.jpeg')">
-            <img src="https://i.imgur.com/uPE0gPp.jpeg" alt="Art 1">
-            <div class="title">Kohana</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/BDrG6xm.jpeg')">
-            <img src="https://i.imgur.com/nIkLkYc.jpeg" alt="Art 1">
-            <div class="title">Kaki bust artwork</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/LdXhWgX.jpeg')">
-            <img src="https://i.imgur.com/SSEojzh.jpeg" alt="Art 1">
-            <div class="title">Kaki full body artwork</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/YxY4QVj.jpeg')">
-            <img src="https://i.imgur.com/YxY4QVj.jpeg" alt="Art 1">
-            <div class="title">Vegas</div>
-        </div>
-        <div class="gallery-item" onclick="openModal('https://i.imgur.com/R7Rl1kV.jpeg')">
-            <img src="https://i.imgur.com/jVemmtE.jpeg" alt="Art 1">
-            <div class="title">IMVU Character</div>
-        </div>
-    </div>
-
-    <!-- CHARA -->
-
-    <div class="section-name">Character Design</div>
-<div class="gallery">
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/5OVsgKd.jpeg')">
-        <img src="https://i.imgur.com/5OVsgKd.jpeg" alt="Art 23">
-        <div class="title">Flower Chara Design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/hdirqms.jpeg')">
-        <img src="https://i.imgur.com/PmSFnMo.jpeg" alt="Art 23">
-        <div class="title">Arcane Fireflies Self Insert</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/254wcXD.jpeg')">
-        <img src="https://i.imgur.com/254wcXD.jpeg" alt="Art 23">
-        <div class="title">Character Design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/799WRZW.jpeg')">
-        <img src="https://i.imgur.com/799WRZW.jpeg" alt="Art 23">
-        <div class="title">Women</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/aKd3Dv4.jpeg')">
-        <img src="https://i.imgur.com/aKd3Dv4.jpeg" alt="Art 23">
-        <div class="title">Fashion design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/8GtWynf.jpeg')">
-        <img src="https://i.imgur.com/8GtWynf.jpeg" alt="Art 23">
-        <div class="title">Character Design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/POziHfn.jpeg')">
-        <img src="https://i.imgur.com/BXqPHYO.jpeg" alt="Art 23">
-        <div class="title">Sunoo Splash Art</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/NlxEcBJ.jpeg')">
-        <img src="https://i.imgur.com/a0ipI2m.jpeg" alt="Art 23">
-        <div class="title">Jungwon Splash Art</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/iHe6ZDG.jpeg')">
-        <img src="https://i.imgur.com/iHe6ZDG.jpeg" alt="Art 1">
-        <div class="title">Arcane Self Insert</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/YWeoYy5.jpeg')">
-        <img src="https://i.imgur.com/YWeoYy5.jpeg" alt="Art 2">
-        <div class="title">Kano (OC) x Saph (Friend's OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/5vDVHti.jpeg')">
-        <img src="https://i.imgur.com/1SAC1j2.jpeg" alt="Art 3">
-        <div class="title">Kano (OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/NKndFkD.jpeg')">
-        <img src="https://i.imgur.com/NKndFkD.jpeg" alt="Art 4">
-        <div class="title">Kano (OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/qwfFp9v.jpeg')">
-        <img src="https://i.imgur.com/MxjN0Ce.jpeg" alt="Art 5">
-        <div class="title">Game Design EN- Heeseung</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/qJqT8S8.jpeg')">
-        <img src="https://i.imgur.com/Sk0nH0l.jpeg" alt="Art 6">
-        <div class="title">Game Design EN- Jake</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/uzJ5Ouy.jpeg')">
-        <img src="https://i.imgur.com/NiOlpHU.jpeg" alt="Art 7">
-        <div class="title">Game Design EN- Jay</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/x0JbgFr.jpeg')">
-        <img src="https://i.imgur.com/QrcJPRK.jpeg" alt="Art 8">
-        <div class="title">Game Design EN- Sunoo</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/seqcDfA.jpeg')">
-        <img src="https://i.imgur.com/seqcDfA.jpeg" alt="Art 9">
-        <div class="title">Enhypen Jungwon design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/v0rI8hv.jpeg')">
-        <img src="https://i.imgur.com/v0rI8hv.jpeg" alt="Art 10">
-        <div class="title">Saph (Friend's OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/favzZzs.jpeg')">
-        <img src="https://i.imgur.com/favzZzs.jpeg" alt="Art 11">
-        <div class="title">Avatar design (Friend's OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/AGy5wUn.jpeg')">
-        <img src="https://i.imgur.com/DnrHELT.jpeg" alt="Art 12">
-        <div class="title">Royalty character design</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/P9aBF1F.jpeg')">
-        <img src="https://i.imgur.com/kiJZBkw.jpeg" alt="Art 13">
-        <div class="title">MLP character design EN- Jay</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/q7CV3zF.jpeg')">
-        <img src="https://i.imgur.com/0Cn6pWH.jpeg" alt="Art 14">
-        <div class="title">MLP character design EN- Heeseung</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/LKSlenU.jpeg')">
-        <img src="https://i.imgur.com/A52SRQz.jpeg" alt="Art 15">
-        <div class="title">MLP character design EN- Sunoo</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/Vfskflx.jpeg')">
-        <img src="https://i.imgur.com/Kxg0MDm.jpeg" alt="Art 16">
-        <div class="title">MLP character design EN- Jungwon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/8PDtkDU.jpeg')">
-        <img src="https://i.imgur.com/8PDtkDU.jpeg" alt="Art 17">
-        <div class="title">Cheetah (Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/jcwrXRi.jpeg')">
-        <img src="https://i.imgur.com/bVfklaa.jpeg" alt="Art 18">
-        <div class="title">Ciel (Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/ODZm8Rc.jpeg')">
-        <img src="https://i.imgur.com/ODZm8Rc.jpeg" alt="Art 19">
-        <div class="title">Dru (Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/gcTRds8.jpeg')">
-        <img src="https://i.imgur.com/gcTRds8.jpeg" alt="Art 20">
-        <div class="title">(Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/F1kvFM3.jpeg')">
-        <img src="https://i.imgur.com/F1kvFM3.jpeg" alt="Art 21">
-        <div class="title">Kara (Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/yJOcApo.jpeg')">
-        <img src="https://i.imgur.com/yJOcApo.jpeg" alt="Art 22">
-        <div class="title">Nephie (Reddit user OC)</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/VHBHiVJ.jpeg')">
-        <img src="https://i.imgur.com/VHBHiVJ.jpeg" alt="Art 23">
-        <div class="title">Thisna (Reddit user OC)</div>
-    </div>
+<!-- FILTRES -->
+<div class="filters">
+  <button data-filter="all" class="active">All</button>
+  <button data-filter="enhypen">Enhypen</button>
+  <button data-filter="entober">En-tober</button>
+  <button data-filter="txt">Tomorrow X Together</button>
+  <button data-filter="commissions">Commissions</button>
 </div>
 
-<!-- KPOP -->
 
-    <div class="section-name">Kpop</div>
-<div class="gallery">
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/yIowCoc.jpeg')">
-        <img src="https://i.imgur.com/P6zfbrQ.jpeg" alt="Art 1">
-        <div class="title">Brought the heat back Sunoo x Heeseung</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/8xrBLNm.jpeg')">
-        <img src="https://i.imgur.com/8xrBLNm.jpeg" alt="Art 2">
-        <div class="title">ZeroBaseOne Hanbin</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/H0sLhFk.jpeg')">
-        <img src="https://i.imgur.com/H0sLhFk.jpeg" alt="Art 3">
-        <div class="title">ZeroBaseOne Zhanghao</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/JKKzQn7.jpeg')">
-        <img src="https://i.imgur.com/JKKzQn7.jpeg" alt="Art 4">
-        <div class="title">Valentine's day Sunoo</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('ahttps://i.imgur.com/Ui6GUYv.jpeg')">
-        <img src="https://i.imgur.com/Ui6GUYv.jpeg" alt="Art 5">
-        <div class="title">Butterfly Jungwon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/yORo5wx.jpeg')">
-        <img src="https://i.imgur.com/yORo5wx.jpeg" alt="Art 6">
-        <div class="title">Winter</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/A4ZZfIq.jpeg')">
-        <img src="https://i.imgur.com/A4ZZfIq.jpeg" alt="Art 7">
-        <div class="title">BTS Jungkook</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/QxwQdM5.jpeg')">
-        <img src="https://i.imgur.com/QxwQdM5.jpeg" alt="Art 8">
-        <div class="title">BTS Jimin</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/uG0ULQy.jpeg')">
-        <img src="https://i.imgur.com/rFGicll.jpeg" alt="Art 9">
-        <div class="title">Halloween Spider Jungwon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/fSp5HsM.jpeg')">
-        <img src="https://i.imgur.com/fSp5HsM.jpeg" alt="Art 10">
-        <div class="title">Dilemma Sunoo</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/fhSbQQE.jpeg')">
-        <img src="https://i.imgur.com/fhSbQQE.jpeg" alt="Art 11">
-        <div class="title"> Snake Ni-ki</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/C9hMKqI.jpeg')">
-        <img src="https://i.imgur.com/hRwsmFS.jpeg" alt="Art 12">
-        <div class="title">Skull Sunghoon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/qDDAN00.jpeg')">
-        <img src="https://i.imgur.com/qDDAN00.jpeg" alt="Art 13">
-        <div class="title">(G)I-DLE Soyeon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/6uvH0UT.jpeg')">
-        <img src="https://i.imgur.com/ZRaitj0.jpeg" alt="Art 14">
-        <div class="title">Cravity Seongmin</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/olPNOEr.jpeg')">
-        <img src="https://i.imgur.com/olPNOEr.jpeg" alt="Art 15">
-        <div class="title">Astronaut Heeseung</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/mEIiCt3.jpeg')">
-        <img src="https://i.imgur.com/mEIiCt3.jpeg" alt="Art 16">
-        <div class="title">Butterfly Jake</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/f5cCTcQ.jpeg')">
-        <img src="https://i.imgur.com/f5cCTcQ.jpeg" alt="Art 17">
-        <div class="title">Bite me Ni-ki</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/eTf8aYo.jpeg')">
-        <img src="https://i.imgur.com/eTf8aYo.jpeg" alt="Art 18">
-        <div class="title">Tomorrow x Together Yeonjun</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/fgvCavN.jpeg')">
-        <img src="https://i.imgur.com/cUpLSGn.jpeg" alt="Art 19">
-        <div class="title">Tomorrow x Together Soobin</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/GPmFFpO.jpeg')">
-        <img src="https://i.imgur.com/GPmFFpO.jpeg" alt="Art 20">
-        <div class="title">Twice Nayeon</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/mFC0NXP.jpeg')">
-        <img src="https://i.imgur.com/iyuXttV.jpeg" alt="Art 21">
-        <div class="title">Blessed-Cursed Jay</div>
-    </div>
-    <div class="gallery-item" onclick="openModal('https://i.imgur.com/UWZoxrB.jpeg')">
-        <img src="https://i.imgur.com/UMpCO5A.jpeg" alt="Art 22">
-        <div class="title">Manifesto Ni-ki</div>
-    </div>
+<!-- GALERIE -->
+ <div class="gallery">
+
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/yok8ymM.jpeg')">
+    <img src="https://i.imgur.com/yok8ymM.jpeg" alt="Art">
+    <div class="title">Music Sunghoon</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/EK9MVhb.jpeg')">
+    <img src="https://i.imgur.com/EK9MVhb.jpeg" alt="Art">
+    <div class="title">Kiss Jay</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/N7oDSHG.jpeg')">
+    <img src="https://i.imgur.com/N7oDSHG.jpeg" alt="Art">
+    <div class="title">Cake Jake</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/EBSYI8z.jpeg')">
+    <img src="https://i.imgur.com/EBSYI8z.jpeg" alt="Art">
+    <div class="title">Time Sunoo</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/oZCehPD.jpeg')">
+    <img src="https://i.imgur.com/oZCehPD.jpeg" alt="Art">
+    <div class="title">Love Letter Jungwon</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/rchVIIK.jpeg')">
+    <img src="https://i.imgur.com/rchVIIK.jpeg" alt="Art">
+    <div class="title">Wings Ni-ki</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/IKcKs74.jpeg')">
+    <img src="https://i.imgur.com/IKcKs74.jpeg" alt="Art">
+    <div class="title">Skeleton Heeseung</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/q1N4Gx6.jpeg')">
+    <img src="https://i.imgur.com/q1N4Gx6.jpeg" alt="Art">
+    <div class="title">Fire Ni-ki</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/KuMTB7m.jpeg')">
+    <img src="https://i.imgur.com/KuMTB7m.jpeg" alt="Art">
+    <div class="title">Crow Sunghoon</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/JNdXTIc.jpeg')">
+    <img src="https://i.imgur.com/JNdXTIc.jpeg" alt="Art">
+    <div class="title">Love Potion Jay</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/MpglYTD.jpeg')">
+    <img src="https://i.imgur.com/MpglYTD.jpeg" alt="Art">
+    <div class="title">Mushroom Jake</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/UA6pJcM.jpeg')">
+    <img src="https://i.imgur.com/UA6pJcM.jpeg" alt="Art">
+    <div class="title">Fairy Jungwon</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/JeU2FQG.jpeg')">
+    <img src="https://i.imgur.com/JeU2FQG.jpeg" alt="Art">
+    <div class="title">Royalty Sunoo</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/KmGDpCw.jpeg')">
+    <img src="https://i.imgur.com/KmGDpCw.jpeg" alt="Art">
+    <div class="title">Celestial Heeseung</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/nDpoMx5.jpeg')">
+    <img src="https://i.imgur.com/nDpoMx5.jpeg" alt="Art">
+    <div class="title">Dark Academia Jay</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/w41D2jj.jpeg')">
+    <img src="https://i.imgur.com/w41D2jj.jpeg" alt="Art">
+    <div class="title">Fish Ni-ki</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/FfawnPc.jpeg')">
+    <img src="https://i.imgur.com/FfawnPc.jpeg" alt="Art">
+    <div class="title">Alien Jungwon</div>
+  </div>
+
+<div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/cPiqNQY.jpeg')">
+    <img src="https://i.imgur.com/cPiqNQY.jpeg" alt="Art">
+    <div class="title">Blood Heeseung</div>
+  </div>
+
+  <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/SxbRkGZ.jpeg')">
+    <img src="https://i.imgur.com/SxbRkGZ.jpeg" alt="Art">
+    <div class="title">Moon Sunghoon</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/MCGbV73.jpeg')">
+    <img src="https://i.imgur.com/MCGbV73.jpeg" alt="Art">
+    <div class="title">Sun Sunoo</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/yqdwI6T.jpeg')">
+    <img src="https://i.imgur.com/yqdwI6T.jpeg" alt="Art">
+    <div class="title">Flowers Jake</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/Fe67cO4.jpeg')">
+    <img src="https://i.imgur.com/Fe67cO4.jpeg" alt="Art">
+    <div class="title">Cyber Jay</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/jQMwQNX.jpeg')">
+    <img src="https://i.imgur.com/jQMwQNX.jpeg" alt="Art">
+    <div class="title">Desire Jungwon</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/oPwsWtz.jpeg')">
+    <img src="https://i.imgur.com/oPwsWtz.jpeg" alt="Art">
+    <div class="title">Zombie Jake</div>
+  </div>
+
+    <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/YUQwKJk.jpeg')">
+    <img src="https://i.imgur.com/YUQwKJk.jpeg" alt="Art">
+    <div class="title">Carnival Heeseung</div>
+  </div>
+
+   <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/7LVUW9F.jpeg')">
+    <img src="https://i.imgur.com/7LVUW9F.jpeg" alt="Art">
+    <div class="title">Post-apo Ni-ki</div>
+  </div>
+
+   <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/gY7FH6q.jpeg')">
+    <img src="https://i.imgur.com/gY7FH6q.jpeg" alt="Art">
+    <div class="title">Underwater Sunghoon</div>
+  </div>
+
+     <div class="gallery-item enhypen entober" onclick="openModal('https://i.imgur.com/FjU2GBU.jpeg')">
+    <img src="https://i.imgur.com/FjU2GBU.jpeg" alt="Art">
+    <div class="title">Circus Sunoo</div>
+  </div>
+
+
+
 </div>
+
+
+ 
+
+
+    <!-- ZOOM -->
 
     <div class="modal" id="modal" onclick="closeModal()">
         <img id="modal-img">
@@ -568,7 +453,45 @@ body {
     © 2025 Kanhoe - Tous droits réservés | Design par Kanhoe
 </footer>
 
+    <!-- TAGS -->
+
+<script>
+const filterButtons = document.querySelectorAll('.filters button');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.getAttribute('data-filter');
+
+    galleryItems.forEach(item => {
+      // Affiche si "all" ou si l'item contient la classe correspondant au filtre
+      if (filter === 'all' || item.classList.contains(filter)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Gestion du bouton actif
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+</script>
+
+    <!-- PAS DE CLICK DROIT -->
+
+<script>
+  document.addEventListener('contextmenu', event => {
+    if (event.target.tagName === 'IMG') {
+      event.preventDefault();
+    }
+  });
+</script>
+
+
+
+
 </body>
 </html>
-
 
